@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hospital Events</title>
+    <style>
+        /* General Styles */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+
+        header {
+            background: linear-gradient(135deg, #007acc, #00bcd4);
+            color: #fff;
+            padding: 1rem 0;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+        }
+
+        nav {
+            text-align: center;
+            margin-top: 0.5rem;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 1.2rem;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        /* Carousel Styles */
+        .carousel {
+            position: relative;
+            width: 90%;
+            max-width: 800px;
+            margin: 2rem auto;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .carousel-images {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .carousel-images img {
+            width: 100%;
+            height: auto;
+            max-height: 400px;
+            flex-shrink: 0;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .carousel-images img:hover {
+            transform: scale(1.05) translateY(-5px);
+        }
+
+        .carousel-buttons {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .carousel-buttons button {
+            background: rgba(0, 0, 0, 0.5);
+            color: #fff;
+            border: none;
+            padding: 0.5rem 1rem;
+            cursor: pointer;
+            font-size: 1.2rem;
+            border-radius: 50%;
+        }
+
+        .carousel-buttons button:hover {
+            background: #007acc;
+        }
+
+        /* Content Section */
+        .content {
+            text-align: center;
+            padding: 2rem 1rem;
+        }
+
+        .content h2 {
+            color: #007acc;
+            margin-bottom: 1rem;
+        }
+
+        .content p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+        }
+
+        /* Footer */
+        footer {
+            background: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1rem 0;
+            margin-top: 2rem;
+        }
+
+        footer p {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Hospital Events</h1>
+        <nav>
+            <a href="events">Home</a>
+            <a href="careers">Careers</a>
+            <a href="doctors">Doctors</a>
+            <a href="payments">Payments</a>
+        </nav>
+    </header>
+
+    <!-- Carousel Section -->
+    <div class="carousel" id="carousel">
+        <div class="carousel-images">
+            <img src="https://img.freepik.com/premium-photo/monkeypox-disease-visuals-clinical-realistic-medical-photography_914383-25467.jpg?semt=ais_hybrid" alt="Medical Camp">
+            <img src="https://cdn.apollohospitals.com/cancer-centre/2024/05/blood-donation.jpg" alt="Blood Donation Drive">
+            <img src="https://thriveldn.co.uk/wp-content/uploads/2023/05/Mental-Health-Awareness-Training-for-frontline-staff.png" alt="Health Awareness Workshop">
+        </div>
+        <div class="carousel-buttons">
+            <button id="prev">&lt;</button>
+            <button id="next">&gt;</button>
+        </div>
+    </div>
+
+    <!-- Content Section -->
+    <div class="content">
+        <h2>Upcoming Events</h2>
+        <p>Stay informed about the latest events happening at our hospital. Join us in creating a healthier community through medical camps, blood donation drives, and health awareness workshops.</p>
+    </div>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2024 Hospital Events. All Rights Reserved.</p>
+    </footer>
+
+    <!-- JavaScript for Carousel -->
+    <script>
+        const images = document.querySelector('.carousel-images');
+        const totalImages = images.children.length;
+        let index = 0;
+
+        document.getElementById('next').addEventListener('click', () => {
+            index = (index + 1) % totalImages;
+            images.style.transform = `translateX(-${index * 100}%)`;
+        });
+
+        document.getElementById('prev').addEventListener('click', () => {
+            index = (index - 1 + totalImages) % totalImages;
+            images.style.transform = `translateX(-${index * 100}%)`;
+        });
+
+        // Auto-slide every 5 seconds
+        setInterval(() => {
+            index = (index + 1) % totalImages;
+            images.style.transform = `translateX(-${index * 100}%)`;
+        }, 5000);
+    </script>
+</body>
+</html>
+

@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hospital Website</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        header {
+            background: #4CAF50;
+            color: #fff;
+            padding: 1rem 0;
+            text-align: center;
+        }
+
+        header nav ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        header nav ul li {
+            display: inline;
+            margin: 0 10px;
+        }
+
+        header nav ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .section {
+            padding: 20px;
+            margin: 20px auto;
+            max-width: 800px;
+        }
+
+        .section h2 {
+            text-align: center;
+            color: #333;
+        }
+
+        .card-container {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .card {
+            border: 1px solid #ddd;
+            padding: 20px;
+            text-align: center;
+            border-radius: 8px;
+        }
+
+        .card img {
+            max-width: 100px;
+            border-radius: 50%;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        form input, form button {
+            padding: 10px;
+            font-size: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        form button {
+            background: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        form button:hover {
+            background: #45a049;
+        }
+
+        footer {
+            background: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1rem;
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="header">
+        <h1>Welcome to Our Hospital</h1>
+        <nav>
+            <ul>
+                <li><a href="events">Home</a></li>
+                <li><a href="doctors">Doctors</a></li>
+                <li><a href="careers">Careers</a></li>
+                <li><a href="payments">Payments</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Home Section -->
+    <section id="home" class="section">
+        <h2>About Us</h2>
+        <p>We provide exceptional healthcare services with top-notch facilities and expert medical professionals.</p>
+    </section>
+
+    
+    <!-- Appointments Section -->
+    <section id="appointments" class="section">
+        <h2>Book an Appointment</h2>
+        <form id="appointment-form">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            
+            <label for="date">Appointment Date:</label>
+            <input type="date" id="date" name="date" required>
+            
+            <button type="submit">Book Now</button>
+        </form>
+    </section>
+
+    <!-- Careers Section -->
+    <section id="careers" class="section">
+        <h2>Join Our Team</h2>
+        <p>We are hiring passionate individuals to join our team.</p>
+        <form id="career-form">
+            <label for="career-name">Full Name:</label>
+            <input type="text" id="career-name" name="career-name" required>
+            
+            <label for="resume">Upload Resume:</label>
+            <input type="file" id="resume" name="resume" required>
+            
+            <button type="submit">Submit Application</button>
+        </form>
+    </section>
+
+    <!-- Payments Section -->
+    <section id="payments" class="section">
+        <h2>Make a Payment</h2>
+        <form id="payment-form">
+            <label for="payer-name">Name:</label>
+            <input type="text" id="payer-name" name="payer-name" required>
+            
+            <label for="amount">Amount:</label>
+            <input type="number" id="amount" name="amount" required>
+            
+            <button type="submit">Pay Now</button>
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Hospital Name. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Appointment Form Submission
+        document.getElementById('appointment-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Appointment booked successfully!');
+        });
+
+        // Career Form Submission
+        document.getElementById('career-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Application submitted successfully!');
+        });
+
+        // Payment Form Submission
+        document.getElementById('payment-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Payment processed successfully!');
+        });
+    </script>
+</body>
+</html>
+
