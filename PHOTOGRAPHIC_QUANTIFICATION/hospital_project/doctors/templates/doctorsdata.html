@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctor Information Table</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+        }
+        th {
+            background-color: #f2f2f2;
+            font-weight: bold;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        tr:hover {
+            background-color: #f1f1f1;
+        }
+    </style>
+</head>
+<body>
+    <h1>Doctor Information Table</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Doctor Name</th>
+                <th>Expertise</th>
+                <th>Contact</th>
+                <th>Email ID</th>
+                <th>Description</th>
+                <th>Department</th>
+                <th>Consultation Fee</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Rows 1 to 21 -->
+            <!-- Using a script to generate repetitive rows -->
+            <script>
+                for (let i = 1; i <= 21; i++) {
+                    document.write(`
+                        <tr>
+                            <td>${i}</td>
+                            <td>Akash</td>
+                            <td>MBBS</td>
+                            <td>977777777</td>
+                            <td>Aakash@gmail.com</td>
+                            <td>20+ years of experience</td>
+                            <td>ENT</td>
+                            <td>500</td>
+                        </tr>
+                    `);
+                }
+            </script>
+            <!-- Row 22 -->
+            <tr>
+                <td>22</td>
+                <td>Akash</td>
+                <td>MBBS</td>
+                <td>7656765676</td>
+                <td>Aakash@gmail.com</td>
+                <td>20+ years of experience</td>
+                <td>Cardiology</td>
+                <td>700</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Table</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid #ccc;
+            padding: 10px;
+            text-align: center;
+        }
+        th {
+            background-color: #f4f4f4;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        tr:nth-child(odd) {
+            background-color: #ffffff;
+        }
+    </style>
+</head>
+<body>
+    <h1>Event Table</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>C1: ID</th>
+                <th>C2: Event Name</th>
+                <th>C3: Organizer</th>
+                <th>C4: Note</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- JavaScript will populate the rows here -->
+        </tbody>
+    </table>
+
+    <script>
+        const tbody = document.querySelector("tbody");
+
+        for (let i = 1; i <= 22; i++) {
+            const row = `
+                <tr>
+                    <td>${i}</td>
+                    <td>Blood donation</td>
+                    <td>Prakash</td>
+                    <td>Please check instructions sheet</td>
+                </tr>
+            `;
+            tbody.innerHTML += row;
+        }
+    </script>
+</body>
+</html>

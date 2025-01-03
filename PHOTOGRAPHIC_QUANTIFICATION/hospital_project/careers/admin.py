@@ -1,3 +1,7 @@
 from django.contrib import admin
+from .models import positions
 
-# Register your models here.
+class positionfn(admin.ModelAdmin):
+    list_display = ("positionname", "baseSalary", "department",)
+admin.site.register(positions)
+

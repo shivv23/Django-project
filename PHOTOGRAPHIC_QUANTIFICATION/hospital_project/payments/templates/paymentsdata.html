@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Table</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid #ccc;
+            padding: 10px;
+            text-align: center;
+        }
+        th {
+            background-color: #f4f4f4;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        tr:nth-child(odd) {
+            background-color: #ffffff;
+        }
+    </style>
+</head>
+<body>
+    <h1>Event Details Table</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>C1: ID</th>
+                <th>C2: Event Name</th>
+                <th>C3: Organizer</th>
+                <th>C4: Contact</th>
+                <th>C5: Price</th>
+                <th>C6: Email</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Rows will be populated by JavaScript -->
+        </tbody>
+    </table>
+
+    <script>
+        const tbody = document.querySelector("tbody");
+
+        for (let i = 1; i <= 21; i++) {
+            const row = `
+                <tr>
+                    <td>${i}</td>
+                    <td>Rakshit</td>
+                    <td></td>
+                    <td>787878787878</td>
+                    <td>500</td>
+                    <td>rakshit@gmail.com</td>
+                </tr>
+            `;
+            tbody.innerHTML += row;
+        }
+    </script>
+</body>
+</html>
